@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML Application with TensorFlow.js</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Material Design -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@material/material-components-web/dist/material-components-web.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@material/material-components-web/dist/material-components-web.min.js"></script>
+  <!-- TensorFlow.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    .upload-and-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+
+    .output-section {
+      margin-top: 30px;
+    }
+
+    .output-section pre {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    #data-table {
+      margin-top: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ML Application: Classification, Regression & Clustering</h1>
+  </header>
+  <main>
+    <!-- Upload and Buttons Section -->
+    <section class="upload-and-buttons">
+      <div class="upload-section">
+        <label for="file-upload" class="mdc-button mdc-button--raised">Upload Data File</label>
+        <input type="file" id="file-upload" accept=".csv" autocomplete="off" />
+      </div>
+
+      <button id="preprocess-btn" class="mdc-button mdc-button--outlined">Preprocess Data</button>
+      <button id="classification-btn" class="mdc-button mdc-button--outlined">Classification</button>
+      <button id="regression-btn" class="mdc-button mdc-button--outlined">Regression</button>
+      <button id="clustering-btn" class="mdc-button mdc-button--outlined">Clustering</button>
+    </section>
+
+    <!-- Epoch Input Section -->
+    <section id="epoch-input-container" class="hidden">
+      <label for="epochs">Enter number of epochs:</label>
+      <input type="number" id="epochs" min="1" value="100" />
+      <button id="confirm-epochs-btn" class="mdc-button mdc-button--raised">Submit</button>
+    </section>
+
+    <!-- Action Buttons After Epochs -->
+    <section id="action-buttons" class="hidden">
+      <button id="show-training-data-btn" class="mdc-button mdc-button--outlined">Show Training Data</button>
+      <button id="show-testing-data-btn" class="mdc-button mdc-button--outlined">Show Testing Data</button>
+      <button id="train-model-btn" class="mdc-button mdc-button--raised">Train Model</button>
+    </section>
+
+    <!-- Results Section -->
+    <section id="output" class="output-section">
+      <h2>Results</h2>
+      <pre id="results"> </pre>
+
+      <!-- Show Data Button (Initially Hidden) -->
+      <button id="show-data-btn" class="mdc-button mdc-button--raised hidden">Show Data</button>
+
+      <!-- Save Model Button (Initially Hidden) -->
+      <button id="save-model-btn" class="mdc-button mdc-button--raised hidden">Save Model</button>
+
+      <!-- Show Errors Button (Initially Hidden) -->
+      <button id="show-errors-btn" class="mdc-button mdc-button--raised hidden">Show Errors</button>
+
+      <!-- Button to Check Missing Values -->
+    <button id="check-missing-values-btn" class="mdc-button mdc-button--raised hidden">Check for Missing Values</button>
+
+      <!-- Button to Handle Missing Values -->
+      <button id="handle-missing-values-btn" class="mdc-button mdc-button--raised hidden">Handle Missing Values</button>
+
+
+      <!-- Table to Display Uploaded Data -->
+      <div id="data-table" class="hidden"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

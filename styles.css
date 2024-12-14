@@ -1,0 +1,106 @@
+/* Add this code to styles.css or within a <style> tag in the <head> section of your HTML */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #6200ea;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.mdc-button {
+  margin: 5px;
+}
+
+section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#output {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #6200ea;
+  color: white;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+button.mdc-button--raised {
+  background-color: #6200ea;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.mdc-button--raised:hover {
+  background-color: #3700b3;
+}
+
+#data-table {
+  display: none;
+  margin-top: 20px;
+}
+
+#show-errors-btn {
+  display: none;
+  margin-top: 20px;
+  background-color: #ff3d00;
+  color: white;
+}
+
+#show-errors-btn:hover {
+  background-color: #e30000;
+}
+
+#training-data-container, #testing-data-container {
+  margin-top: 20px;
+}
+
+#training-data-table, #testing-data-table {
+  display: block;
+}
